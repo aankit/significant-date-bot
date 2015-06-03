@@ -18,10 +18,18 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/friend-info' do
-    if Date.today == Date.parse(params["date"])
-      send_sms(params["phone-number"], params["text"])
+    if params["phone-number"].scan(/\d/).length == 10
+      just_digits = params["phone-number"].scan(/\d/).join
+      if Date.today == Date.parse(params["date"])
+        send_sms(just_digits, params["text"])
+        erb :confirm
+      else
+        erb :index
+      end
+    else
+      erb :index
     end
-    erb :confirm
+    
   end
   
   get'/' do

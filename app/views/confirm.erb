@@ -4,9 +4,10 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
   <body>
-  <form action="/confirm" method="POST">
-    <p>Is this the correct information? </p>
-    <input type="text" name="confirm">
-    <input type="submit">
-  </form>    
+     <p>You're message has been sent to <%=params["name"] %>: <%= params["phone-number"]%> </p>
+  # <form action="/confirm" method="POST">
+   
+    # <input type="text" name="confirm">
+    # <input type="submit">
+  # </form>    
 </body>
