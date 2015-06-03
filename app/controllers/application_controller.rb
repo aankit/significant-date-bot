@@ -10,7 +10,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post'/confirm' do
-    if confirm_msg == "yes"
+    if params["confirm"] == "yes"
       erb :sent
     else
       erb :index
