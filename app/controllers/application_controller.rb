@@ -16,8 +16,12 @@ class ApplicationController < Sinatra::Base
   end
   
   post '/friend-info' do
-    puts params
-    erb :confirm
+    if params["phone-number"].scan(/\d/).length == 10
+      just_digits = params["phone-number"].scan(/\d/).join
+      erb :confirm
+    else
+      erb :index
+    end
   end
   
   get'/' do
