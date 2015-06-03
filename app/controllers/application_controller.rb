@@ -1,5 +1,7 @@
 require './config/environment'
 require'pry'
+require './helpers'
+require 'Date'
 class ApplicationController < Sinatra::Base
 
   configure do
@@ -7,8 +9,18 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  post'/confirm' do
+    if confirm_msg == "yes"
+      erb :sent
+    else
+      erb :index
+    end
+  end
+  
   post '/friend-info' do
-    puts params
+    if Date.today == Date.parse(params["date"])
+      send_sms(params["phone-number"], params["text"])
+    end
     erb :confirm
   end
   
