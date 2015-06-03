@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head>
+		<meta charset="utf-8">
+		<title>Significant Date Bot</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+  <body>
+
+    <form action="/friend-info" method="POST">
+      <p>Whose's significant date are you going to forget?: </p>
+      <input type="text" name="name">
+      <p>When are you going to forget to text this person?</p>
+      <input type="text" name="date">
+      <p>What is this person's phone number?</p>
+      <input type="text" name="phone-number">
+      <p>What would you like to text them?</p>
+      <input type="text" name="text">
+      <input type="submit">
+    </form>    
+  </body>
+<<<<<<< HEAD
+</html>
+=======
+</html>
+>>>>>>> master

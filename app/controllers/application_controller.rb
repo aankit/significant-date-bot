@@ -8,7 +8,7 @@ class ApplicationController < Sinatra::Base
   end
 
   
-  get'/friend-info' do
+  post '/friend-info' do
     puts params
   end
   
